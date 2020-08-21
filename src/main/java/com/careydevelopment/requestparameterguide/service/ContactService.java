@@ -11,14 +11,20 @@ import com.careydevelopment.requestparameterguide.model.Contact;
 public class ContactService {
 
     public Contact fetchContactById(Integer id) {
-        switch (id) {
-            case 1:
-                return fetchJimmyBuffet();
-            case 2:
-                return fetchDarthVader();
-            default:
-                return null;
+        Contact contact = null;
+        
+        if (id != null) {
+            switch (id) {
+                case 1:
+                    contact = fetchJimmyBuffet();
+                    break;
+                case 2:
+                    contact = fetchDarthVader();
+                    break;
+            }
         }
+        
+        return contact;
     }
 	
 	

@@ -6,23 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.careydevelopment.requestparameterguide.model.Contact;
 import com.careydevelopment.requestparameterguide.service.ContactService;
 
 @RestController
-@RequestMapping("/contact")
 public class ContactController {
 
     @Autowired
     private ContactService contactService;
     
     
-    @GetMapping("/{id}")
-    public ResponseEntity<Contact> contact(@PathVariable Integer id) {
+    @GetMapping("/contact")
+    public ResponseEntity<Contact> contact(@RequestParam(required = false) Integer id) {
         HttpStatus status = HttpStatus.OK;
         Contact contact = contactService.fetchContactById(id);
         
@@ -34,8 +32,8 @@ public class ContactController {
     }
     
     
-    @GetMapping("/{salesOwnerId}/{id}")
-    public ResponseEntity<Contact> contactBySalesOwner(@PathVariable Integer salesOwnerId, @PathVariable Integer id) {
+    @GetMapping("/contactBySalesOwner")
+    public ResponseEntity<Contact> contactBySalesOwner(@RequestParam Integer id, @RequestParam Integer salesOwnerId) {
         HttpStatus status = HttpStatus.OK;
         Contact contact = null;
         
