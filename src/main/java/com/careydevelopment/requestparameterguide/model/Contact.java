@@ -1,4 +1,4 @@
-package com.careydevelopment.pathvariableguide.model;
+package com.careydevelopment.requestparameterguide.model;
 
 public class Contact {
 

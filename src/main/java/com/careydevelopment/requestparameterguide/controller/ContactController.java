@@ -1,4 +1,4 @@
-package com.careydevelopment.pathvariableguide.controller;
+package com.careydevelopment.requestparameterguide.controller;
 
 import java.util.Optional;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.careydevelopment.pathvariableguide.model.Contact;
-import com.careydevelopment.pathvariableguide.service.ContactService;
+import com.careydevelopment.requestparameterguide.model.Contact;
+import com.careydevelopment.requestparameterguide.service.ContactService;
 
 @RestController
 @RequestMapping("/contact")

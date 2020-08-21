@@ -1,11 +1,11 @@
-package com.careydevelopment.pathvariableguide.service;
+package com.careydevelopment.requestparameterguide.service;
 
 import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.springframework.stereotype.Service;
 
-import com.careydevelopment.pathvariableguide.model.Contact;
+import com.careydevelopment.requestparameterguide.model.Contact;
 
 @Service
 public class ContactService {

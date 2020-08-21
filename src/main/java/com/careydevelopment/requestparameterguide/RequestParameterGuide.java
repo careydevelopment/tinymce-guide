@@ -1,12 +1,12 @@
-package com.careydevelopment.pathvariableguide;
+package com.careydevelopment.requestparameterguide;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PathVariableGuide {
+public class RequestParameterGuide {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PathVariableGuide.class,args);
+		SpringApplication.run(RequestParameterGuide.class,args);
 	}
 }
