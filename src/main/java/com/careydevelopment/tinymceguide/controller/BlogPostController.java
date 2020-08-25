@@ -21,9 +21,6 @@ import com.careydevelopment.tinymceguide.model.BlogPost;
 @Controller
 @RequestMapping("/admin")
 public class BlogPostController {
-
-	private static final Logger LOG = LoggerFactory.getLogger(BlogPostController.class);
-
 		
 	@GetMapping("/addEditPost")
 	public String addEditPost(Model model, @RequestParam("blogPostId") Optional<String> blogPostId) {		
@@ -33,15 +30,10 @@ public class BlogPostController {
 	
 
 	@PostMapping("/addEditPost")
-	public String addEditPostSubmit(Model model, @Valid BlogPost blogPost, BindingResult bindingResult, HttpServletResponse response) {
-		if (bindingResult.hasErrors()) {
-			for (ObjectError err : bindingResult.getAllErrors()) {
-				LOG.debug(err.getCode() + " " + err.getDefaultMessage() + " " + err.getObjectName() + " " +err);
-			}
-			
-			return "admin/addEditPost";
-		}
-		
+	public String addEditPostSubmit(Model model, BlogPost blogPost) {
+	    System.out.println("Title is " + blogPost.getTitle());
+	    System.out.println("Body is " + blogPost.getBody());
+	    
 		return "admin/addEditPost";
 	}
 
